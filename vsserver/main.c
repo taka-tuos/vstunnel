@@ -196,9 +196,9 @@ void *server_thread(void *port)
 		if(mode == 'r') {
 			int t = 0;
 			while(1) {
-				usleep(10);
+				usleep(5000);
 				t++;
-				if(t == 100000) {
+				if(t == 200) {
 					send(clit_sock, "00000001", 8, 0);
 					send(clit_sock, " ", 1, 0);
 					t = 0;

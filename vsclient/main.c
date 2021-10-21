@@ -266,6 +266,7 @@ void *rx_stream_thread_func(void *param)
 void *tx_stream_thread_func(void *param)
 {
 	while(1) {
+		usleep(5000);
 		if(serial_available(device) > 0) {
 			size_t siz = serial_available(device);
 			void *payload = malloc(siz);
